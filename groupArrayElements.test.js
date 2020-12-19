@@ -10,7 +10,7 @@ describe("groupArrayElements", () => {
       Math.floor(Math.random())
     );
 
-    let divisor = Math.floor(Math.random() * (1 - arraySize - 5) + arraySize);
+    let divisor = Math.floor(Math.random() * (1 - arraySize) + arraySize);
     let expectedGroupSize = Math.ceil(arraySize / divisor);
     let groupedArray = groupArrayElements(input, divisor);
 
