@@ -4,14 +4,14 @@ import CONSTANTS from "./constants.js";
 
 describe("groupArrayElements", () => {
   test("random array input returns valid result", () => {
-    let arraySize = Math.floor(Math.random() * (1, 100000));
-    let expectedGroupSize = Math.ceil(arraySize / divisor);
+    let arraySize = Math.floor(Math.random() * (1 - 100000) + 100000);
 
     let input = Array.from({ length: arraySize }, () =>
-      Math.floor(Math.random() * 40)
+      Math.floor(Math.random())
     );
 
-    let divisor = Math.floor(Math.random() * (1, arraySize - 5));
+    let divisor = Math.floor(Math.random() * (1 - arraySize - 5) + arraySize);
+    let expectedGroupSize = Math.ceil(arraySize / divisor);
     let groupedArray = groupArrayElements(input, divisor);
 
     expect(isGroupedArrayValid(groupedArray, expectedGroupSize)).toEqual(true);
